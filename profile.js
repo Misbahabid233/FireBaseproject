@@ -5,15 +5,16 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
       
       const uid = user.uid;
-      console.log(uid);
+      // console.log(uid);
       
     } else {
       console.log("User is signed out");
     }
   });
- var userInput = prompt("Enter your name")
+//  var userInput = prompt("Enter your name")
+//  var userprofilepic = prompt("enter your profile pic")
   updateProfile(auth.currentUser, {
-    displayName: userInput, photoURL: "https://example.com/jane-q-user/profile.jpg"
+    displayName: userInput, photoURL: "userprofilepic"
   }).then(() => {
    
   }).catch((error) => {

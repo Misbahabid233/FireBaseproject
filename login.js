@@ -11,8 +11,12 @@ loginBtn.addEventListener("click", () => {
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log("Login successful:", user);
-     location.href = "profile.html"
+        alert("Login successful:", user);
+        setTimeout(()=>{
+            location.href = "profile.html"
+        },3000)
+   
+    //  
     })
     .catch((error) => {
         const errorCode = error.code;

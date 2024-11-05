@@ -12,10 +12,10 @@ const auth = getAuth();
         // Signed up 
         const user = userCredential.user;
         console.log(user);
-        alert("Account successfully created!")
-        setTimeout(()=>{
-            location.href = "login.html"
-        },3000)
+      
+          alert("Account successfully created!" ,user)
+      
+        
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -45,6 +45,9 @@ const auth = getAuth();
          userName.value = ""
 
         
-           location.href = "login.html"
+           
+        setTimeout(()=>{
+          location.href = "login.html"
+      },3000)
  })
  export{singUpBtn,userEmail,userPassword,userName }
