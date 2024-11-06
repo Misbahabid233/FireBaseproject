@@ -1,6 +1,7 @@
-import { getAuth ,  onAuthStateChanged , updateProfile } from "./firebase.js";
+import { getAuth ,  onAuthStateChanged , updateProfile  } from "./firebase.js";
 getAuth()
 const auth = getAuth();
+const provider = new GoogleAuthProvider();
 onAuthStateChanged(auth, (user) => {
     if (user) {
       
@@ -11,8 +12,11 @@ onAuthStateChanged(auth, (user) => {
       console.log("User is signed out");
     }
   });
-//  var userInput = prompt("Enter your name")
-//  var userprofilepic = prompt("enter your profile pic")
+ var edit =  document.getElementById("editbtn")
+
+edit.addEventListener("click" , () =>{
+   var userInput = prompt("Enter your name")
+ var userprofilepic = prompt("enter your profile pic")
   updateProfile(auth.currentUser, {
     displayName: userInput, photoURL: "userprofilepic"
   }).then(() => {
@@ -21,3 +25,5 @@ onAuthStateChanged(auth, (user) => {
    console.log(error);
   });
   
+})
+ 
