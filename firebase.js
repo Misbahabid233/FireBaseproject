@@ -1,8 +1,9 @@
 
   
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore";
   // import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-  import { getAuth , GoogleAuthProvider, signInWithPopup , createUserWithEmailAndPassword , signInWithEmailAndPassword, onAuthStateChanged ,updateProfile } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+  import { getAuth , GoogleAuthProvider, signInWithPopup , createUserWithEmailAndPassword , signInWithEmailAndPassword, onAuthStateChanged ,updateProfile ,signOut , sendEmailVerification ,db } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
  
   const firebaseConfig = {
     apiKey: "AIzaSyASganQOa2tJFgd73nHGccnmvOl1ByElg8",
@@ -18,4 +19,8 @@
   const app = initializeApp(firebaseConfig);
   // const analytics = getAnalytics(app);
   const auth = getAuth(app);
-  export{getAuth , GoogleAuthProvider , signInWithPopup, createUserWithEmailAndPassword ,signInWithEmailAndPassword , onAuthStateChanged , updateProfile }
+  const provider = new GoogleAuthProvider();
+  const db = getFirestore(app);
+  
+
+  export{getAuth , GoogleAuthProvider , signInWithPopup, createUserWithEmailAndPassword ,signInWithEmailAndPassword , onAuthStateChanged , updateProfile ,signOut ,sendEmailVerification ,db }

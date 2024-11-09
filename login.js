@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword,GoogleAuthProvider , signInWithPopup} from "./firebase.js";
+import { getAuth, signInWithEmailAndPassword,GoogleAuthProvider , signInWithPopup } from "./firebase.js";
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
@@ -6,6 +6,7 @@ var loginEmail = document.getElementById("loginEmail");
 var loginPassword = document.getElementById("loginPassword");
 var loginBtn = document.getElementById("loginBtn");
 var googlebtn = document.getElementById ("googlebtn");
+
 googlebtn.addEventListener("click",()=>{
     signInWithPopup(auth, provider)
     .then((result) => {
@@ -47,4 +48,11 @@ loginBtn.addEventListener("click", () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage); 
     });
+   
+
+    
 });
+var signUp = document.getElementById("signUp")
+    signUp.addEventListener("click" , ()=>{
+        location.href = "index.html"
+    })

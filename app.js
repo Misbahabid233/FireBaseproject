@@ -1,6 +1,7 @@
-import { getAuth , createUserWithEmailAndPassword } from "./firebase.js";
+import { getAuth , createUserWithEmailAndPassword} from "./firebase.js";
 getAuth()
 const auth = getAuth();
+
  var userName = document.getElementById("name");
  var userEmail= document.getElementById("email");
  var userPassword = document.getElementById("password");
