@@ -67,7 +67,7 @@ singUpBtn.addEventListener("click", async() =>{
     userPhoneNo : phoneNo.value,
   }
    try {
-  const docRef = await addDoc(collection(db, "usersData"), {
+  const docRef = await addDoc(collection(db, "users"), {
     ...usersData
   });
   console.log("Document written with ID: ", docRef.id);
