@@ -11,7 +11,8 @@ body {
     min-height: 100vh;
     padding: 0 10px;
     display: flex;
-    background: #626cd6;
+    /* background: #626cd6; */
+    background: #f0faff;
     justify-content: center;
     align-items: center;
 }

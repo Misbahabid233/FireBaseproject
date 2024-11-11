@@ -1,11 +1,13 @@
-import { getAuth , createUserWithEmailAndPassword} from "./firebase.js";
+import { getAuth , createUserWithEmailAndPassword } from "./firebase.js";
+import { db ,collection, addDoc} from "./firebase.js";
 getAuth()
+
 const auth = getAuth();
 
- var userName = document.getElementById("name");
+//  var userName = document.getElementById("name");
  var userEmail= document.getElementById("email");
  var userPassword = document.getElementById("password");
- console.log(userName.value , userEmail.value , userPassword.value );
+//  console.log(userName.value , userEmail.value , userPassword.value );
  var singUpBtn = document.getElementById("btn")
  singUpBtn.addEventListener("click",()=>{
     createUserWithEmailAndPassword (auth , userEmail.value , userPassword.value)
@@ -43,7 +45,9 @@ const auth = getAuth();
       });
      userEmail.value = ""
        userPassword.value = ""
-         userName.value = ""
+         name.value = ""
+         phoneNo = ""
+         proffesion = ""
 
         
            
@@ -51,4 +55,27 @@ const auth = getAuth();
           location.href = "login.html"
       },3000)
  })
- export{singUpBtn,userEmail,userPassword,userName }
+
+ let name = document.getElementById("name");
+  let phoneNo = document.getElementById("phoneno");
+ let proffesion = document.getElementById("proff");
+singUpBtn.addEventListener("click", async() =>{
+  let usersData = {
+    userName : name.value,
+    // userPhoneNo : userPhoneNo.value,
+    userProffesion : proffesion.value,
+    userPhoneNo : phoneNo.value,
+  }
+   try {
+  const docRef = await addDoc(collection(db, "usersData"), {
+    ...usersData
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+
+
+})
+
+//  export{singUpBtn,userEmail,userPassword,userName }
