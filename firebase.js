@@ -22,6 +22,7 @@ export {
     auth,
     provider,
     db,
+    GoogleAuthProvider,
     signInWithPopup,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,

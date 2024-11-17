@@ -58,3 +58,8 @@ edit.addEventListener("click" , () =>{
   alert("User is signed out");
 }
 });
+
+document.getElementById("post").addEventListener("click", () => {
+  console.log("Navigate to post.html");
+  location.href = "post.html";
+});

@@ -1,5 +1,5 @@
 import { getAuth , createUserWithEmailAndPassword } from "./firebase.js";
-import { db ,collection, addDoc} from "./firebase.js";
+// import { db ,collection, addDoc} from "./firebase.js";
 getAuth()
 
 const auth = getAuth();
@@ -7,6 +7,7 @@ const auth = getAuth();
 //  var userName = document.getElementById("name");
  var userEmail= document.getElementById("email");
  var userPassword = document.getElementById("password");
+ let name = document.getElementById("name");
 //  console.log(userName.value , userEmail.value , userPassword.value );
  var singUpBtn = document.getElementById("btn")
  singUpBtn.addEventListener("click",()=>{
@@ -46,8 +47,8 @@ const auth = getAuth();
      userEmail.value = ""
        userPassword.value = ""
          name.value = ""
-         phoneNo = ""
-         proffesion = ""
+        //  phoneNo = ""
+        //  proffesion = ""
 
         
            
@@ -56,26 +57,26 @@ const auth = getAuth();
       },3000)
  })
 
- let name = document.getElementById("name");
-  let phoneNo = document.getElementById("phoneno");
- let proffesion = document.getElementById("proff");
-singUpBtn.addEventListener("click", async() =>{
-  let usersData = {
-    userName : name.value,
-    // userPhoneNo : userPhoneNo.value,
-    userProffesion : proffesion.value,
-    userPhoneNo : phoneNo.value,
-  }
-   try {
-  const docRef = await addDoc(collection(db, "usersData"), {
-    ...usersData
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
+//  let name = document.getElementById("name");
+//   let phoneNo = document.getElementById("phoneno");
+//  let proffesion = document.getElementById("proff");
+// singUpBtn.addEventListener("click", async() =>{
+//   let usersData = {
+//     userName : name.value,
+//     // userPhoneNo : userPhoneNo.value,
+//     userProffesion : proffesion.value,
+//     userPhoneNo : phoneNo.value,
+//   }
+//    try {
+//   const docRef = await addDoc(collection(db, "usersData"), {
+//     ...usersData
+//   });
+//   console.log("Document written with ID: ", docRef.id);
+// } catch (e) {
+//   console.error("Error adding document: ", e);
+// }
 
 
-})
+// })
 
 //  export{singUpBtn,userEmail,userPassword,userName }
