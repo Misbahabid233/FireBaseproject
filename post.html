@@ -7,53 +7,62 @@
        <link rel="stylesheet" href="bootstrap.css">
        <link rel="stylesheet" href="bootstarp.js">
         <link rel="stylesheet" href="post.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css">
     </head>
     <body>
-        <!-- post navbar -->
-         
-        <!-- Image and text -->
-<nav class="navbar navbar-light bg-light background">
+         <!-- Navbar -->
+   <nav class="navbar navbar-light bg-light background">
     <a class="navbar-brand clour" href="#">
-      <img src="download.png" width="30" height="30" class="d-inline-block align-top " alt="">
-    Crate a Post
+        <img src="download.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Create a Post
     </a>
-  </nav>
-            
-        </div>
-        <!-- Post body -->
-        <div class="container-fluid mt-4 ">
-            <div class="row p-2 gap-5">
-                <div class="col-12 col-sm-12 col-md-4   ">
-                    <!-- Post maker -->
-                    <div class="card p-4 border-green ">
-                        <form class="p-2">
-                            <div class="mb-3">
-                                <label for="post-title" class="form-label fontStyle">Title</label>
-                                <input type="text" class="form-control" id="post-title" placeholder="Enter your Title">
-                            </div>
-                            <label for="postdescrib" class="form-label fontStyle" >Description</label>
-                            <div class="form-floating fontStyle">
-                                <textarea
-                                    class="form-control "
-                                    placeholder="Enter your Description"
-                                    id="postdescrib"
-                                    style="height: 100px"
-                                    
-                                ></textarea>
-                            </div>
-                            
-                            </div>
-                            <button type="button" class="btn btn-primary mt-4 fontStyle color-blue" onclick="submitPost()">Add Post</button>
-                        </form>
+</nav>
+
+<!-- Main Container -->
+<div class="container-fluid mt-4">
+    <div class="row gap-5">
+        <!-- Post Creator -->
+        <div class="col-12 col-sm-12 col-md-4">
+            <div class="card p-4 border-green">
+                <form id="postForm">
+                    <div class="mb-3">
+                        <label for="post-title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="post-title" placeholder="Enter your Title">
                     </div>
-                </div>
-                <!-- showing post -->
-                <div class="col-12 col-sm-12 col-md-6 " id="posts"></div>
+                    <div class="mb-3">
+                        <label for="postdescrib" class="form-label">Description</label>
+                        <textarea class="form-control" id="postdescrib" placeholder="Enter your Description" style="height: 100px"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-light mt-4 btncolor" id="postBtn">Add Post</button>
+                </form>
             </div>
         </div>
-        <script src="post.js"></script>
+
+        <!-- Posts Display -->
+        <div class="col-12 col-sm-12 col-md-6" id="posts">
+            <!-- Dynamic posts will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Additional Buttons -->
+    <div class="mt-4">
+        <button type="button" class="btn btn-success" id="allpost">Get All Posts</button>
+        <button type="button" class="btn btn-danger" id="delpost">Delete Post</button>
+        <button type="button" class="btn btn-warning" id="updpost">Update Post</button>
+    </div>
+</div>
+
+<!-- Post Display Section -->
+<div id="postDisplay" class="mt-4 d-none">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h1 id="displayTitle" class="card-title"></h1>
+            <p id="displayContent" class="card-text"></p>
+        </div>
+    </div>
+</div>
+        <script type="module" src="post.js"></script>
     </body>
 </html>

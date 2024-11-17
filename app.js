@@ -61,24 +61,22 @@ const auth = getAuth();
 
 
  
-singUpBtn.addEventListener("click", async() =>{
-  let usersData = {
-    userName : name.value,
-    // userPhoneNo : userPhoneNo.value,
-    userProffesion : proffesion.value,
-    userPhoneNo : phoneNo.value,
-  }
-   try {
-  const docRef = await addDoc(collection(db, "users"), {
-    ...usersData
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
+// singUpBtn.addEventListener("click", async() =>{
+//   let usersData = {
+//     userName : name.value,
+   
+//   }
+//    try {
+//   const docRef = await addDoc(collection(db, "users"), {
+//     ...usersData
+//   });
+//   console.log("Document written with ID: ", docRef.id);
+// } catch (e) {
+//   console.error("Error adding document: ", e);
+// }
 
 
 
-})
+// })
 
 //  export{singUpBtn,userEmail,userPassword,userName }
